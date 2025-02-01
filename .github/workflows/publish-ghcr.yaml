@@ -10,3 +10,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+      - name: build and push
+        run: |
+          docker login --username alpellegri --password ${{ secrets.CH_PAT }}
+          docker build . --tag ghcr.io/alpellegri/test:latest
+          docher push ghcr.io/alpellegri/test:latest
