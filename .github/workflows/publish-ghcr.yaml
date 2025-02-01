@@ -5,6 +5,12 @@ on:
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
+      permissions:
+        contents: read
     steps:
       - name: checkout
-        uses: action/checkout@v3
+        uses: actions/checkout@v2
+        with:
+          repository: alpellegri/docker-test
+          token: ${{ secrets.PAT }}
+          ref: master
