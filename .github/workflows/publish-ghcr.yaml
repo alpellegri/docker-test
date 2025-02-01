@@ -18,6 +18,6 @@ jobs:
       - name: build and push
         run: |
           echo ${{ secrets.GH_PAT }}
-          echo ${{ secrets.GH_PAT }} | docker login --username alpellegri --password-stdin
-          docker build . --tag ghcr.io/alpellegri/test:latest
-          docher push ghcr.io/alpellegri/test:latest
+          # echo ${{ secrets.GH_PAT }} | docker login --username alpellegri --password-stdin
+          # docker build . --tag ghcr.io/alpellegri/test:latest
+          # docher push ghcr.io/alpellegri/test:latest
