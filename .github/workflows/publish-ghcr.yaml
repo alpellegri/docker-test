@@ -9,8 +9,4 @@ jobs:
       contents: read
     steps:
       - name: checkout
-        uses: actions/checkout@v2
-        with:
-          repository: alpellegri/docker-test
-          token: ${{ secrets.CH_PAT }}
-          ref: master
+        uses: actions/checkout@v3
