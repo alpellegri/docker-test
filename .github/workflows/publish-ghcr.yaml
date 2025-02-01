@@ -5,8 +5,8 @@ on:
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
-      permissions:
-        contents: read
+    permissions:
+      contents: read
     steps:
       - name: checkout
         uses: actions/checkout@v2
