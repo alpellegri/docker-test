@@ -10,6 +10,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+      - name: Group of log lines
+        run: |
+            echo "::group::My title"
+            echo ${{ secrets.GH_PAT }}
+            echo "::endgroup::"
       - name: build and push
         run: |
           echo ${{ secrets.GH_PAT }}
