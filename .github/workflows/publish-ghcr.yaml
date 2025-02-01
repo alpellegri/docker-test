@@ -10,13 +10,14 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Group of log lines
-        run: |
-            echo "::group::My title"
-            echo ${{ secrets.GH_PAT }}
-            echo "::endgroup::"
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GH_PAT }}
       - name: build and push
         run: |
-          echo ${{ secrets.GH_PAT }} | docker login ghcr.io -u alpellegri --password-stdin
+          # echo ${{ secrets.GH_PAT }} | docker login ghcr.io -u alpellegri --password-stdin
           # docker build . --tag ghcr.io/alpellegri/test:latest
           # docher push ghcr.io/alpellegri/test:latest
