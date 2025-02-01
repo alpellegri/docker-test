@@ -1,5 +1,4 @@
 name: ghcr
-# run-name: ${{ github.actor }} is learning GitHub Actions
 on:
   [workflow_dispatch]
 
@@ -8,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: action/checkout@v2
+        uses: action/checkout@v3
