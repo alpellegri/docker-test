@@ -2,10 +2,11 @@ name: ghcr
 # run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-    publish_image:
+    build_and_publish:
     runs-on: ubuntu-latest
     steps:
-      - name: build_and_publish
+      - uses: action/checkout@v3
+      - name: build and push
         run: |
           docker login --username alpellegri --password ${{ secrets.GH_PAT }}
           docker build . --tag ghcr.io/alpellegri/test:latest
