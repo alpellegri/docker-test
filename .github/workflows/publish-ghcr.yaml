@@ -12,5 +12,5 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: alpellegri/docker-test
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.CH_PAT }}
           ref: master
