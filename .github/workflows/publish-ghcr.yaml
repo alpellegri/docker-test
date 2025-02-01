@@ -11,7 +11,6 @@ jobs:
       - uses: action/checkout@v4
         with:
           repository: alpellegri/docker-test
-          token: ${{ secrets.GH_PAT }}
           ref: master
       - name: build and push
         run: |
