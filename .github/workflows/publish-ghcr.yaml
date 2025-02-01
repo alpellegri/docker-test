@@ -6,7 +6,7 @@ jobs:
   build_and_publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v3
+      - uses: action/checkout@v4
       - name: build and push
         run: |
           docker login --username alpellegri --password ${{ secrets.GH_PAT }}
