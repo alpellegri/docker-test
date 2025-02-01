@@ -8,7 +8,8 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: action/checkout@v4
+      - name: checkout
+        uses: action/checkout@v4
         with:
           repository: alpellegri/docker-test
           token: ${{ secrets.GH_PAT }}
