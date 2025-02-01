@@ -17,7 +17,6 @@ jobs:
             echo "::endgroup::"
       - name: build and push
         run: |
-          echo ${{ secrets.GH_PAT }}
-          # echo ${{ secrets.GH_PAT }} | docker login --username alpellegri --password-stdin
+          echo ${{ secrets.GH_PAT }} | docker login ghcr.io -u alpellegri --password-stdin
           # docker build . --tag ghcr.io/alpellegri/test:latest
           # docher push ghcr.io/alpellegri/test:latest
