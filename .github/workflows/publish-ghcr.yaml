@@ -20,4 +20,4 @@ jobs:
         run: |
           # echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u alpellegri --password-stdin
           docker build . --tag ghcr.io/alpellegri/test:latest
-          # docher push ghcr.io/alpellegri/test:latest
+          docher push ghcr.io/alpellegri/test:latest
