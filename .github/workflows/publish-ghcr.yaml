@@ -18,6 +18,5 @@ jobs:
           password: ${{ secrets.CR_PAT }}
       - name: build and push
         run: |
-          # echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u alpellegri --password-stdin
-          docker build . --tag ghcr.io/alpellegri/docker-test:latest
-          docker push ghcr.io/alpellegri/docker-test:latest
+          docker build . --tag ghcr.io/${{ github.actor }}/docker-test:latest
+          docker push ghcr.io/${{ github.actor }}/docker-test:latest
